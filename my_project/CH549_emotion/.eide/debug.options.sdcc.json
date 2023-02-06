@@ -1,0 +1,21 @@
+{
+    "version": 3,
+    "beforeBuildTasks": [],
+    "afterBuildTasks": [],
+    "global": {
+        "device": "mcs51",
+        "optimize-type": "size",
+        "stack-auto": true,
+        "use-non-free": true
+    },
+    "c/cpp-compiler": {
+        "language-c": "c99",
+        "misc-controls": "--stack-auto --no-xinit-opt --model-large"
+    },
+    "asm-compiler": {},
+    "linker": {
+        "$mainFileName": "main",
+        "output-format": "hex",
+        "misc-controls": "--stack-auto --no-xinit-opt --model-large --xram-size 0x0800 --code-size 0xF000"
+    }
+}
