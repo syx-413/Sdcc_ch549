@@ -6,16 +6,15 @@
         "device": "mcs51",
         "optimize-type": "size",
         "stack-auto": true,
-        "use-non-free": true
+        "use-non-free": true,
+        "misc-controls": "--xram-size 0x0800 --code-size 0xF000"
     },
     "c/cpp-compiler": {
-        "language-c": "c99",
-        "misc-controls": "--stack-auto --no-xinit-opt --model-large"
+        "language-c": "sdcc2x"
     },
     "asm-compiler": {},
     "linker": {
         "$mainFileName": "main",
-        "output-format": "hex",
-        "misc-controls": "--stack-auto --no-xinit-opt --model-large --xram-size 0x0800 --code-size 0xF000"
+        "output-format": "hex"
     }
 }

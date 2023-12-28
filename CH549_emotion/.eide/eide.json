@@ -3,7 +3,8 @@
   "type": "C51",
   "dependenceList": [],
   "srcDirs": [
-    "src"
+    "src",
+    "include"
   ],
   "virtualFolder": {
     "name": "<virtual_root>",
