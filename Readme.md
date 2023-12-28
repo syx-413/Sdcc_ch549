@@ -21,6 +21,8 @@
 
 ##  我的EIDE 配置（CH549）
 
+`--xram-size 0x0800 --code-size 0xF000`
+
 ![全局设置](/jpg/done1.jpg)
 
 ![编译器设置](/jpg/done2.jpg)
@@ -28,7 +30,7 @@
 ![linker设置](/jpg/done3.jpg)
 
 
-`--xram-size 0x0800 --code-size 0xF000`
+
 ## Sdcc 语法差距
 
 ```C
