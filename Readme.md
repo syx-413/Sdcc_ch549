@@ -1,4 +1,4 @@
-## 插件 Eide
+## 插件 EIDE
 `dotnet` 必须为6的版本
 [dotnet](https://dotnet.microsoft.com/en-us/download/dotnet/scripts)
 
@@ -12,18 +12,10 @@
 这个配置包含了项目的全局的包含目录
 
 如果编译器在构建时出现一个错误，并告诉您没有找到 `xx.h` 文件，可能需要检查此配置
-### 库目录
-
-当使用 `-l` 命令行选项（比如：-`lxxx`, `-lmy_lib`）添加了一些库时（`.lib`, `.a`），该配置将告诉链接器这些库文件的搜索路径
-
-注意
-这个配置仅适用于 GCC 系列编译器，对于其他类型编译器， 你可以使用 添加源文件 功能直接添加 `.lib`, `.obj` 文件到项目，这将获得同样的效果
 
 ##  我的EIDE 配置（CH549）
 
 `--xram-size 0x0800 --code-size 0xF000`
-
-![全局设置](/jpg/done1.jpg)
 
 ![编译器设置](/jpg/done2.jpg)
 
@@ -43,6 +35,8 @@ SBIT(pin,0x90,0);//SDCC
 
 void Timer0() interrupt 1//KEIL 中定义 Timer0()为中断1的中断服务函数
 void Timer0() __interrupt 1//SDCC 中定义 Timer0()为中断1的中断服务函数
+
+void Timer0() __interrupt (x) using (x) //新版本的可能需要这样写
 //declare nvic function before use 在使用中断函数之前要声明
 
 //keil
@@ -54,6 +48,12 @@ int __data sdcc;
 }
 ```
 
+## 如何下载到mcu中
+使用
+[wchisp](https://ch32-rs.github.io/wchisp/)
+
+#### 命令注意的相关参数
+`wchisp flash ${ExecutableName}.hex` 注意windows 下的配置环境变量，否则需要`.\wchisp.exe flash ${ExecutableName}.hex`,其中`${ExecutableName}.hex` 为编译出来的`.hex`文件，如果没有在这个文件目录，要带绝对路径
 
 
 ### CH549
